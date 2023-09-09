@@ -3,10 +3,11 @@ const express = require("express");
 
 // Initialize Express
 const app = express();
+app.set("view engine", "ejs");
 
 // Create GET request
 app.get("/", (req, res) => {
-    res.send("Express on Vercel");
+    res.render("index");
 });
 
 // Initialize server
