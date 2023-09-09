@@ -1,15 +1,15 @@
-const app = require("express")();
-const { v4 } = require("uuid");
+// / Add Express
+const express = require("express");
 
-app.use(express.static("public"));
+// Initialize Express
+const app = express();
 
-app.get("/api", (req, res) => {
-    res.send("<h1>DONE</h1>")
+// Create GET request
+app.get("/", (req, res) => {
+    res.send("Express on Vercel");
 });
 
-app.get("/api/item/:slug", (req, res) => {
-    const { slug } = req.params;
-    res.end(`Item: ${slug}`);
+// Initialize server
+app.listen(5000, () => {
+    console.log("Running on port 5000.");
 });
-
-module.exports = app;
