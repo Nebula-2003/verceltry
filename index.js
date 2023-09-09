@@ -8,7 +8,11 @@ app.use(express.static("public"));
 let image = "./images/1.png";
 // Create GET request
 app.get("/", (req, res) => {
-    res.render("index", { image });
+    try {
+        res.render("index", { image });
+    } catch (error) {
+        console.log("error:", error);
+    }
 });
 
 // Initialize server
